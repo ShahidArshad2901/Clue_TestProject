@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question: MyString
+  question_id: MyString
+  yes_answer: MyString
+  yes_context: MyString
+  yes_question_id: MyString
+  no_answer: MyString
+  no_context: MyString
+  no_question_id: MyString
+
+two:
+  question: MyString
+  question_id: MyString
+  yes_answer: MyString
+  yes_context: MyString
+  yes_question_id: MyString
+  no_answer: MyString
+  no_context: MyString
+  no_question_id: MyString

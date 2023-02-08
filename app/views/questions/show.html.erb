@@ -1,0 +1,11 @@
+<% if @conclusion.present? %>
+  <h1>Conclusion:</h1>
+  <p><%= @conclusion %></p>
+   <%= link_to "Start Again", root_path %>
+<% else %>
+  <h1><%= @current_question.question %></h1>
+  <%= form_tag question_path(@current_question), method: :get do %>
+    <%= submit_tag "Yes", name: "answer", value: "yes" %>
+    <%= submit_tag "No", name: "answer", value: "no" %>
+  <% end %>
+<% end %>
