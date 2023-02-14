@@ -1,11 +1,17 @@
-<% if @conclusion.present? %>
-  <h1>Conclusion:</h1>
-  <p><%= @conclusion %></p>
-   <%= link_to "Start Again", root_path %>
-<% else %>
-  <h1><%= @current_question.question %></h1>
-  <%= form_tag question_path(@current_question), method: :get do %>
-    <%= submit_tag "Yes", name: "answer", value: "yes" %>
-    <%= submit_tag "No", name: "answer", value: "no" %>
+<%= stylesheet_link_tag "style", media: "all", "data-turbolinks-track": "reload" %>
+
+<div class="form-container">
+  <% if @conclusion.present? %>
+    <div class="conclusion">
+      <h1>Conclusion:</h1>
+      <h1><%= @conclusion %></h1>
+      <%= link_to "Start Again", root_path, class: ".btn" %>
+    </div>
+  <% else %>
+    <form action="<%= question_path(@current_question) %>" method="get">
+      <h1><%= @current_question.question %></h1>
+      <%= button_tag "Yes", name: "answer", value: true, type: "submit" %>
+      <%= button_tag "No", name: "answer", value: false, type: "submit" %>
+    </form>
   <% end %>
-<% end %>
+</div>
